@@ -1,0 +1,141 @@
+/* Importacion de fuente (Roboto) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+/* Declaracion default */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Variables globales */
+:root {
+    --primary-color: #4338CA;
+    --secondary-color: white;
+    --button-color: #818CF8;
+    --button-hover-color: #6366F1;
+}
+
+/* Codigo en cascada */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Encabezado (contenedor principal)*/
+.header {
+    width: 100%;
+    height: 100px;
+    background: var(--primary-color);
+}
+
+/* Contenedor padre de los elementos de la barra de navegación */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Ajustes el Logo (texto) */
+.logo {
+    font-size: 2em;
+    color: var(--secondary-color);
+}
+
+/* Contenedor de navegación */
+.menu-container {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 1.5em;
+    transition: .2s;
+}
+
+.menu-link:hover {
+    color: rgb(241, 233, 233);
+    transition: .2s;
+    transform: scale(1.1);
+}
+
+.btn {
+    padding: 10px 20px;
+    background: var(--button-color);
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background: var(--button-hover-color);
+}
+
+/* Icono de menu para dispositivos medianos/pequeños */
+.menu-box {
+    display: none;
+}
+
+/* Contenedor para el contenido principal de la página (el de demostración) */
+.main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 25px auto;
+}
+
+.main-text {
+    font-size: 1.5em;
+}
+
+.main-img {
+    width: 100%;
+}
+
+/* Media query para dispositivos menores de 752px de ancho */
+@media screen and (max-width: 752px) {
+    .header {
+        padding-bottom: 30px;
+        transition: .4s;
+    }
+    .header-resize {
+        height: 280px;
+        transition: .4s;
+    }
+    .container {
+        gap: 0px;
+        position: relative;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    .logo-container {
+        position: absolute;
+        top: 31px;
+        left: 0;
+    }
+    .menu-container {
+        flex-direction: column;
+        align-items: flex-end;
+        display: none;
+    }
+    .menu-show {
+        animation: opacity 1.5s;
+        display: flex;
+    }
+    @keyframes opacity {
+        from {opacity: 0}
+        to {opacity: 1}
+    }
+    .menu-box {
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        cursor: pointer;
+    }
+}
